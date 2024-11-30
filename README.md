@@ -1,4 +1,4 @@
-# Backblaze Demo
+# Rust Backblaze Demo
 
 Examples of using Backblaze
 
@@ -10,6 +10,7 @@ You need an application key. See the [Application Keys](https://www.backblaze.co
 cat << EOF > .env
 export BACKBLAZE_KEY_ID=<backblaze key id>
 export BACKBLAZE_KEY=<backblaze key value>
+export BACKBLAZE_BUCKET=<backblaze bucket>
 export AWS_ENDPOINT_URL=<backblaze bucket endpoint url>
 export AWS_ACCESS_KEY_ID="$BACKBLAZE_KEY_ID"
 export AWS_SECRET_ACCESS_KEY="$BACKBLAZE_KEY

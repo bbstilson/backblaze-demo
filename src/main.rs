@@ -11,6 +11,7 @@ use std::{
 };
 
 use backblaze_api::BackblazeApi;
+use consts::BUCKET;
 use rand::seq::SliceRandom;
 
 #[tokio::main]
@@ -28,7 +29,7 @@ async fn s3_sdk_example() -> anyhow::Result<()> {
 
     let r = client
         .list_objects_v2()
-        .bucket("bbstilson-test-town")
+        .bucket(BUCKET)
         .max_keys(1000)
         .prefix("audio")
         .send()
@@ -46,12 +47,7 @@ async fn s3_sdk_example() -> anyhow::Result<()> {
         let path = PathBuf::from(key);
 
         let start = Instant::now();
-        let r = client
-            .get_object()
-            .bucket("bbstilson-test-town")
-            .key(*key)
-            .send()
-            .await?;
+        let r = client.get_object().bucket(BUCKET).key(*key).send().await?;
 
         let mut f = File::create(path)?;
         let mut data = r.body;

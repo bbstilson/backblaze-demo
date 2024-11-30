@@ -1,14 +1,13 @@
 [package]
-name = "backblaze-lt"
+name = "backblaze-demo"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 anyhow = "1.0.93"
 rand = "0.8.5"
-# aws-config = { version = "1.5.10", features = ["behavior-version-latest"] }
-# aws-sdk-s3 = "1.63.0"
-# base64 = "0.22.1"
+aws-config = { version = "1.5.10", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1.63.0"
 reqwest = {version = "0.12.9", features = ["json"]}
 serde = { version = "1.0.215", features = ["derive"] }
 serde_json = "1.0.133"

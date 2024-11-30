@@ -1,4 +1,6 @@
-# Backblaze Native API Example
+# Backblaze Demo
+
+Examples of using Backblaze
 
 ## Running
 
@@ -8,7 +10,7 @@ You need an application key. See the [Application Keys](https://www.backblaze.co
 cat << EOF > .env
 export BACKBLAZE_KEY_ID=<backblaze key id>
 export BACKBLAZE_KEY=<backblaze key value>
-export AWS_ENDPOINT_URL="https://s3.us-west-004.backblazeb2.com"
+export AWS_ENDPOINT_URL=<backblaze bucket endpoint url>
 export AWS_ACCESS_KEY_ID="$BACKBLAZE_KEY_ID"
 export AWS_SECRET_ACCESS_KEY="$BACKBLAZE_KEY
 EOF
@@ -28,6 +30,8 @@ cargo run --release
 ```
 
 ## Sample Run
+
+I uploaded the same audio file to ~100 different uuid keys to simulate having 100 files. Each file is ~12MB.
 
 ```bash
 # Native API
